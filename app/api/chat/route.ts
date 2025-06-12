@@ -1,4 +1,13 @@
+// Force Node.js runtime to avoid Vercel Edge limit error
 export const runtime = "nodejs";
+
+import { OpenAIStream, StreamingTextResponse } from "ai";
+import OpenAI from "openai";
+
+const openai = new OpenAI({
+  apiKey: process.env.OPENAI_API_KEY,
+});
+
 import { kv } from '@vercel/kv'
 import { OpenAIStream, StreamingTextResponse } from 'ai'
 import { Configuration, OpenAIApi } from 'openai-edge'
